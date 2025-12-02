@@ -1,0 +1,58 @@
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%);
+  transition: background 0.3s ease;
+}
+
+:root[data-theme="light"] .app-container {
+  background: radial-gradient(circle at top right, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  min-height: 0;
+  /* Important for scroll within flex items */
+}
+
+.editor-pane,
+.preview-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+}
